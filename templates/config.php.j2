@@ -1,0 +1,10 @@
+<?php
+$XVWA_WEBROOT = "";
+$host = "{{ xvwa_db_host }}";
+$dbname = '{{ xvwa_db_name }}';
+$user = "{{ xvwa_db_user }}";
+$pass = "{{ xvwa_db_pass }}";
+$conn = new mysqli($host,$user,$pass,$dbname);
+$conn1 = new PDO("mysql:host=$host;dbname=$dbname", $user, $pass);
+$conn1->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+?>

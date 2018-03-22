@@ -1,0 +1,22 @@
+---
+# tasks file for ansible-role-xvwa
+
+- name: clone xvwa repo
+  git:
+    repo: "{{ xvwa_git_repo }}"
+    dest: config.php.j2
+    update: no
+
+- name: set permissions of xvwa folder
+  file:
+    path: "{{ xvwa_install_path }}"
+    recurse: yes
+    owner: "{{ xvwa_user }}"
+    group: "{{ xvwa_group }}"
+
+- name: configure xvwa
+  template:
+    src: config.php.j2
+    dest: "{{ xvwa_install_path }}/config.php"
+    owner: "{{ xvwa_user }}"
+    group: "{{ xvwa_group }}"

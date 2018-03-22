@@ -1,0 +1,11 @@
+---
+# defaults file for ansible-role-xvwa
+
+xvwa_install_path: /var/www/html/xvwa
+xvwa_git_repo: https://github.com/s4n7h0/xvwa
+xvwa_user: www-data
+xvwa_group: www-data
+xvwa_db_host: localhost
+xvwa_db_name: xvwa
+xvwa_db_user: xvwa
+xvwa_db_pass: ChangeMe
